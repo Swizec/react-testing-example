@@ -11,7 +11,7 @@
     "url": "https://github.com/Swizec/react-testing-example"
   },
   "author": "Swizec Teller",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Swizec/react-testing-example/issues"
   },
@@ -20,11 +20,14 @@
     "jest-cli": "^0.4.2"
   },
   "dependencies": {
+    "d3": "^3.5.5",
     "react": "^0.13.3",
     "react-tools": "^0.13.3"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/preprocessor.js",
-    "unmockedModulePathPatterns": ["<rootDir>/node_modules/react"]
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ]
   }
 }
