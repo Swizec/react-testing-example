@@ -1,0 +1,30 @@
+{
+  "name": "react-testing-example",
+  "version": "0.0.0",
+  "description": "A sample project to investigate testing options with ReactJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Swizec/react-testing-example"
+  },
+  "author": "Swizec Teller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Swizec/react-testing-example/issues"
+  },
+  "homepage": "https://github.com/Swizec/react-testing-example",
+  "devDependencies": {
+    "jest-cli": "^0.4.2"
+  },
+  "dependencies": {
+    "react": "^0.13.3",
+    "react-tools": "^0.13.3"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "unmockedModulePathPatterns": ["<rootDir>/node_modules/react"]
+  }
+}
