@@ -1,11 +1,12 @@
 
-jest.dontMock('../src/ScatterPlot.jsx');
+//jest.dontMock('../src/ScatterPlot.jsx');
 
 var React = require('react/addons'),
-    ScatterPlot = require('../src/ScatterPlot.jsx'),
-    TestUtils = React.addons.TestUtils;
+    ScatterPlot = require('../ScatterPlot.jsx'),
+    TestUtils = React.addons.TestUtils,
+    expect = require('expect');
 
-var d3 = require('../node_modules/d3/d3.js');
+var d3 = require('d3');
 
 describe('ScatterPlot', function () {
     var mockData = d3.range(5).map(function () {

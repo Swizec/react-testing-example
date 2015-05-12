@@ -17,18 +17,26 @@
   },
   "homepage": "https://github.com/Swizec/react-testing-example",
   "devDependencies": {
-    "jest-cli": "^0.4.2"
-  },
-  "dependencies": {
+    "babel-core": "^5.2.17",
+    "babel-loader": "^5.0.0",
     "d3": "^3.5.5",
+    "expect": "^1.6.0",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.10",
+    "karma-cli": "0.0.4",
+    "karma-mocha": "^0.1.10",
+    "karma-sourcemap-loader": "^0.3.4",
+    "karma-webpack": "^1.5.1",
+    "mocha": "^2.2.4",
     "react": "^0.13.3",
-    "react-tools": "^0.13.3"
+    "react-tools": "^0.13.3",
+    "webpack": "^1.9.4"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/preprocessor.js",
     "unmockedModulePathPatterns": [
-        "<rootDir>/node_modules/react",
-        "<rootDir>/node_modules/d3"
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/d3"
     ]
   }
 }
