@@ -48,5 +48,6 @@ describe('ScatterPlot', function () {
         );
 
         expect(circles.length).toEqual(5);
+
     });
 });
