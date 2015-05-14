@@ -9,7 +9,8 @@ var ScatterPlot = React.createClass({
         return {
             data: [],
             width: 500,
-            height: 500
+            height: 500,
+            point_r: 3
         }
     },
 
@@ -28,12 +29,12 @@ var ScatterPlot = React.createClass({
         this.yScale
             .domain([d3.min(props.data, function (d) { return d[1]; }),
                      d3.max(props.data, function (d) { return d[1]; })])
-            .range([0, Number(props.height)]);
+            .range([props.point_r, Number(props.height-props.point_r)]);
 
         this.xScale
             .domain([d3.min(props.data, function (d) { return d[0]; }),
                      d3.max(props.data, function (d) { return d[0]; })])
-            .range([0, Number(props.width)]);
+            .range([props.point_r, Number(props.width-props.point_r)]);
     },
 
     render: function () {
@@ -44,9 +45,12 @@ var ScatterPlot = React.createClass({
                     {this.props.data.map(function (pos, i) {
                         var key = "circle-"+i;
                         return (
-                            <circle key={key} />
+                            <circle key={key}
+                                    cx={this.xScale(pos[0])}
+                                    cy={this.yScale(pos[1])}
+                                    r={this.props.point_r} />
                         );
-                     })};
+                     }.bind(this))};
                 </svg>
             </div>
         );

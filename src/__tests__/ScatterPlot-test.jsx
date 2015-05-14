@@ -9,8 +9,9 @@ var React = require('react/addons'),
 var d3 = require('d3');
 
 describe('ScatterPlot', function () {
-    var mockData = d3.range(5).map(function () {
-        return [d3.random.normal(), d3.random.normal()];
+    var normal = d3.random.normal(1, 1),
+        mockData = d3.range(5).map(function () {
+        return [normal(), normal()];
     });
 
     it("renders an h1", function () {
@@ -48,6 +49,25 @@ describe('ScatterPlot', function () {
         );
 
         expect(circles.length).toEqual(5);
+    });
 
+    it("keeps circles in bounds", function () {
+        var scatterplot = TestUtils.renderIntoDocument(
+            <ScatterPlot data={mockData} width="500" height="500" />
+        );
+
+        var circles = TestUtils.scryRenderedDOMComponentsWithTag(
+            scatterplot, 'circle'
+        );
+
+        circles.forEach(function (circle) {
+            var cx = circle.getDOMNode().getAttribute("cx"),
+                cy = circle.getDOMNode().getAttribute("cy");
+
+            expect(Number(cx)).toBeMoreThan(0)
+                              .toBeLessThan(500);
+            expect(Number(cy)).toBeMoreThan(0)
+                              .toBeLessThan(500);
+        });
     });
 });

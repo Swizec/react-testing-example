@@ -1,6 +1,7 @@
 
-var fakeData = d3.range(100).map(function () {
-    return [d3.random.normal(), d3.random.normal()];
+var normal = d3.random.normal(1, 1);
+var fakeData = d3.range(1000).map(function () {
+    return [normal(), normal()];
 });
 
 React.render(
