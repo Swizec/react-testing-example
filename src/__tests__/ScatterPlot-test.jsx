@@ -11,7 +11,7 @@ var d3 = require('d3');
 describe('ScatterPlot', function () {
     var normal = d3.random.normal(1, 1),
         mockData = d3.range(5).map(function () {
-        return [normal(), normal()];
+        return {x: normal(), y: normal()};
     });
 
     it("renders an h1", function () {

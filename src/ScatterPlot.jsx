@@ -40,7 +40,7 @@ var ScatterPlot = React.createClass({
     render: function () {
         return (
             <div>
-                <h1>This is a scatterplot</h1>
+                <h1>This is a random scatterplot</h1>
                 <svg width={this.props.width} height={this.props.height}>
                     {this.props.data.map(function (pos, i) {
                         var key = "circle-"+i;
