@@ -4,7 +4,9 @@
   "description": "A sample project to investigate testing options with ReactJS",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+      "start": "npm run server | npm run dev",
+      "serve": "./node_modules/.bin/http-server -p 8080",
+      "dev": "webpack-dev-server --progress --colors --port 8090"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,8 @@
     "babel-loader": "^5.0.0",
     "d3": "^3.5.5",
     "expect": "^1.6.0",
+    "http-server": "^0.8.0",
+    "jsx-loader": "^0.13.2",
     "karma": "^0.12.31",
     "karma-chrome-launcher": "^0.1.10",
     "karma-cli": "0.0.4",
@@ -30,7 +34,8 @@
     "mocha": "^2.2.4",
     "react": "^0.13.3",
     "react-tools": "^0.13.3",
-    "webpack": "^1.9.4"
+    "webpack": "^1.9.4",
+    "webpack-dev-server": "^1.8.2"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/preprocessor.js",

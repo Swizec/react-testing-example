@@ -1,8 +1,6 @@
 
-if (typeof require !== 'undefined') {
-    var React = require('react/addons');
-    var d3 = require('d3');
-}
+var React = require('react/addons');
+var d3 = require('d3');
 
 var RandomPicker = React.createClass({
     mixins: [React.addons.PureRenderMixin],
@@ -83,7 +81,4 @@ var RandomPicker = React.createClass({
     }
 });
 
-
-if (typeof module !== 'undefined') {
-    module.exports = RandomPicker;
-}
+module.exports = RandomPicker;

@@ -1,8 +1,6 @@
 
-if (typeof require !== 'undefined') {
-    var React = require('react/addons');
-    var d3 = require('d3');
-}
+var React = require('react/addons');
+var d3 = require('d3');
 
 var ScatterPlot = React.createClass({
     getDefaultProps: function () {
@@ -57,6 +55,4 @@ var ScatterPlot = React.createClass({
     }
 });
 
-if (typeof module !== 'undefined') {
-    module.exports = ScatterPlot;
-}
+module.exports = ScatterPlot;

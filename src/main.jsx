@@ -1,4 +1,9 @@
 
+var React = require('react');
+var d3 = require('d3');
+var ScatterPlot = require('./ScatterPlot');
+var RandomPicker = require('./RandomPicker');
+
 var App = React.createClass({
     getInitialState: function () {
         return {

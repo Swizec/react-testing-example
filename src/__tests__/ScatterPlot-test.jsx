@@ -23,7 +23,7 @@ describe('ScatterPlot', function () {
             scatterplot, 'h1'
         );
 
-        expect(h1.getDOMNode().textContent).toEqual("This is a scatterplot");
+        expect(h1.getDOMNode().textContent).toEqual("This is a random scatterplot");
     });
 
     it("renders an svg with appropriate dimensions", function () {
