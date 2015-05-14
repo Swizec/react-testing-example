@@ -21,19 +21,19 @@ var ScatterPlot = React.createClass({
         this.update_d3(this.props);
     },
 
-    componentWillReceiveProps: function (oldProps, newProps) {
+    componentWillReceiveProps: function (newProps) {
         this.update_d3(newProps);
     },
 
     update_d3: function (props) {
         this.yScale
-            .domain([d3.min(props.data, function (d) { return d[1]; }),
-                     d3.max(props.data, function (d) { return d[1]; })])
+            .domain([d3.min(props.data, function (d) { return d.y; }),
+                     d3.max(props.data, function (d) { return d.y; })])
             .range([props.point_r, Number(props.height-props.point_r)]);
 
         this.xScale
-            .domain([d3.min(props.data, function (d) { return d[0]; }),
-                     d3.max(props.data, function (d) { return d[0]; })])
+            .domain([d3.min(props.data, function (d) { return d.x; }),
+                     d3.max(props.data, function (d) { return d.x; })])
             .range([props.point_r, Number(props.width-props.point_r)]);
     },
 
@@ -46,8 +46,8 @@ var ScatterPlot = React.createClass({
                         var key = "circle-"+i;
                         return (
                             <circle key={key}
-                                    cx={this.xScale(pos[0])}
-                                    cy={this.yScale(pos[1])}
+                                    cx={this.xScale(pos.x)}
+                                    cy={this.yScale(pos.y)}
                                     r={this.props.point_r} />
                         );
                      }.bind(this))};
