@@ -1,20 +1,30 @@
 
+var path = require('path');
+var webpack = require('webpack');
+
 module.exports = {
-    entry: './src/main.jsx',
+    entry: [
+        'webpack-dev-server/client?http://localhost:3000',
+        'webpack/hot/only-dev-server',
+        './src/main.jsx'
+    ],
     output: {
         filename: 'bundle.js',
-        publicPath: 'http://localhost:8090/assets'
+        path: path.join(__dirname, 'build'),
+        publicPath: '/scripts/'
     },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
+    ],
     module: {
         loaders: [
             {
                 test: /\.jsx$/,
-                loader: 'jsx-loader?insertPragma=React.DOM&hramony'
+                loaders: ['react-hot', 'babel'],
+                include: path.join(__dirname, 'src')
             }
         ]
-    },
-    externals: {
-        'react': 'React'
     },
     resolve: {
         extensions: ['', '.js', '.jsx']
