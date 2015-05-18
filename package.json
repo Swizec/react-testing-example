@@ -4,10 +4,8 @@
   "description": "A sample project to investigate testing options with ReactJS",
   "main": "index.js",
   "scripts": {
-    "start-hot": "node server.js",
-    "start": "npm run serve | npm run dev",
-    "serve": "./node_modules/.bin/http-server -p 8080",
-    "dev": "webpack-dev-server --progress --colors --port 8090"
+    "start": "node server.js",
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
