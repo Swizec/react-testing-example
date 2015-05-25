@@ -22,7 +22,7 @@ var App = React.createClass({
 
         return (
             <div>
-                <ScatterPlot width="500" height="500" data={data} />
+                <ScatterPlot width="500" height="300" data={data} />
                 <RandomPicker newRandomFunction={this.updateRandom} />
             </div>
         );
