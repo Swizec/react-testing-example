@@ -23,7 +23,7 @@
     "d3": "^3.5.5",
     "expect": "^1.6.0",
     "jsx-loader": "^0.13.2",
-    "karma": "^0.12.31",
+    "karma": "^0.13.0",
     "karma-chrome-launcher": "^0.1.10",
     "karma-cli": "0.0.4",
     "karma-mocha": "^0.1.10",
